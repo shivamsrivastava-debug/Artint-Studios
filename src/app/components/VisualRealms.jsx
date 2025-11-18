@@ -101,102 +101,99 @@ const VisualRealms = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-300 border border-gray-700 mb-6">
-            <Film className="w-4 h-4 mr-2" />
-            Visual Portfolio
+          <div className="hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-300 border border-gray-700 mb-6">
+            <Film className="w-4 h-4 mr-2 text-emerald-500" />
+            <p className='text-emerald-500'>Visual Portfolio</p>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-            Visual
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-red-400">
-              Realms
-            </span>
+           <h2 className=" text-4xl font-bold mb-5 gap-7 bg-gradient-to-r from-purple-500 to-red-400 bg-clip-text text-transparent">
+            Visual <span className="bg-gradient-to-r from-purple-500 to-red-400 bg-clip-text text-transparent">Realms</span>
           </h2>
-          <p className="text-xl text-gray-300 mb-4 max-w-2xl mx-auto">
+          <p className="text-xl mb-4 max-w-2xl bg-gradient-to-r from-purple-500 via-green-600 to-red-400 bg-clip-text text-transparent m-auto">
             Music videos, behind-the-scenes, and visual storytelling
           </p>
-          <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Cinematic presentation of our visual catalog featuring director's cut versions, 
+          <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed">
+            Cinematic presentation of our visual catalog featuring director's cut versions,
             exclusive behind-the-scenes content, and artistic interpretations of our audio work.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
+
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="group relative bg-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-800 hover:border-gray-600 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 break-inside-avoid"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={createCardVariants(index)}
-            >
-              {/* Image Container */}
+              initial={{ opacity: 0, y: 80, rotate: 3 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.12 }}
+              viewport={{ once: true }}
+              className={` relative rounded-3xl overflow-hidden bg-gray-900/50 backdrop-blur-xl border border-gray-800 shadow-xl hover:shadow-purple-500/20 transition-all duration-500 group hover:-translate-y-3 hover:rotate-1 ${index % 2 === 0 ? "sm:-mt-10" : ""} ${index % 3 === 0 ? "lg:-mt-14" : ""}`}>
+
+              {/* Floating Glow Behind Card */}
+              <div className="absolute -inset-2 bg-purple-500/10 blur-2xl opacity-0 group-hover:opacity-50 transition"></div>
+
+              {/* Image */}
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full object-cover transition duration-700 group-hover:scale-110 rounded-t-3xl"
+                  style={{ height: `${240 + (index % 4) * 50}px` }}
                 />
-                
+
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <button className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30 hover:bg-white/30 transition-colors">
-                      <Play className="w-6 h-6 text-white ml-1" />
-                    </button>
-                  </div>
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-60 transition"></div>
+
+                {/* Play Button */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+                  <button className="w-16 h-16 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center hover:bg-white/30 transition">
+                    <Play className="w-7 h-7 text-white ml-1" />
+                  </button>
                 </div>
 
-                {/* Category Badge */}
-                <div className="absolute top-3 left-3">
-                  <span className="px-3 py-1 bg-black/60 backdrop-blur-sm text-xs font-medium text-white rounded-full border border-gray-600">
-                    {project.category}
-                  </span>
-                </div>
+                {/* Badge */}
+                <span className="absolute top-4 left-4 text-xs px-3 py-1 bg-black/50 backdrop-blur-md text-white rounded-full">
+                  {project.category}
+                </span>
 
-                {/* Director's Cut Badge */}
                 {project.isDirectorsCut && (
-                  <div className="absolute top-3 right-3">
-                    <span className="px-2 py-1 bg-gradient-to-r from-purple-600 to-pink-600 text-xs font-bold text-white rounded-full">
-                      DIRECTOR'S CUT
-                    </span>
-                  </div>
+                  <span className="absolute top-4 right-4 text-xs px-2 py-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold">
+                    DIRECTOR’S CUT
+                  </span>
                 )}
-
-                {/* Duration */}
-                <div className="absolute bottom-3 right-3">
-                  <div className="flex items-center px-2 py-1 bg-black/60 backdrop-blur-sm rounded-full text-xs text-white">
-                    <Clock className="w-3 h-3 mr-1" />
-                    {project.duration}
-                  </div>
-                </div>
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
+                <h3 className="text-xl text-green-500 font-bold mb-2 group-hover:text-purple-300 transition">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+
+                <p className="text-gray-500 text-sm mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
-                {/* Stats */}
+                {/* Bottom Row */}
+                <div className="flex justify-between items-center">
+                  <div className="text-gray-500 text-xs flex items-center">
+                    <Clock className="w-3 h-3 mr-1" />
+                    {project.duration}
+                  </div>
 
-                {/* Action Buttons */}
-                <div className="flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button className="flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-medium rounded-lg hover:from-purple-700 hover:to-pink-700 transition-colors">
-                    <Play className="w-4 h-4 mr-2" />
-                    Watch Now
-                  </button>
-                  <button className="p-2 text-gray-400 hover:text-white transition-colors">
-                    <Share2 className="w-4 h-4" />
-                  </button>
+                  <div className="flex gap-3">
+                    <button className="px-3 py-1.5 text-sm bg-yellow-800 hover:bg-white/20 text-gray-500 rounded-md transition">
+                      Watch
+                    </button>
+                    <button className="p-2 text-gray-400 hover:text-white transition">
+                      <Share2 className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
               </div>
+
             </motion.div>
           ))}
+
         </div>
       </div>
     </section>

@@ -49,14 +49,14 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+      <footer className="bg-gradient-to-br from-black via-purple-950 to-black text-white">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             
             {/* Footer Menu - Secondary Navigation */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Footer Menu
+              <h3 className="text-2xl font-bold text-gray-300">
+                Menu
               </h3>
               <div className="space-y-4">
                 {[
@@ -70,7 +70,7 @@ const Footer = () => {
                   <a
                     key={item}
                     href="#"
-                    className="block text-gray-300 hover:text-purple-400 transition-colors duration-300 hover:translate-x-1 transform"
+                    className="block text-gray-500 hover:text-purple-400 transition-colors duration-300 hover:translate-x-1 transform"
                   >
                     {item}
                   </a>
@@ -80,7 +80,7 @@ const Footer = () => {
 
             {/* Streaming Universe */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold text-gray-300">
                 Streaming Universe
               </h3>
               <div className="space-y-4">
@@ -92,9 +92,9 @@ const Footer = () => {
                       href={platform.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-3 text-gray-300 hover:text-white transition-all duration-300 group hover:translate-x-1 transform"
+                      className="flex items-center space-x-3 text-gray-500 hover:text-white transition-all duration-300 group hover:translate-x-1 transform"
                     >
-                      <IconComponent className={`w-5 h-5 ${platform.color} group-hover:scale-110 transition-transform`} />
+                      <IconComponent className={`w-5 h-5  group-hover:scale-110 transition-transform`} />
                       <span>{platform.name}</span>
                       <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
@@ -105,25 +105,25 @@ const Footer = () => {
 
             {/* Business Portals */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold text-gray-300">
                 Business Portals
               </h3>
               <div className="space-y-4">
                 <a
                   href="#"
-                  className="block text-gray-300 hover:text-emerald-400 transition-colors duration-300 hover:translate-x-1 transform"
+                  className="block text-gray-500  transition-colors duration-300 hover:translate-x-1 transform"
                 >
                   Licensing Terms
                 </a>
                 <a
                   href="#"
-                  className="block text-gray-300 hover:text-emerald-400 transition-colors duration-300 hover:translate-x-1 transform"
+                  className="block text-gray-500 transition-colors duration-300 hover:translate-x-1 transform"
                 >
                   Privacy Policy
                 </a>
                 <button
                   onClick={() => setShowContactModal(true)}
-                  className="block text-gray-300 hover:text-emerald-400 transition-colors duration-300 hover:translate-x-1 transform text-left"
+                  className="block text-gray-500 transition-colors duration-300 hover:translate-x-1 transform text-left"
                 >
                   Business Collaborations
                 </button>
@@ -132,17 +132,17 @@ const Footer = () => {
                   className="flex items-center space-x-2 text-gray-300 hover:text-emerald-400 transition-colors duration-300 hover:translate-x-1 transform group"
                 >
                   <Download className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span>Media Kit Download</span>
+                  <span className='text-gray-500'>Media Kit Download</span>
                 </a>
               </div>
             </div>
 
             {/* Stay Tuned */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold text-gray-300">
                 Stay Tuned
               </h3>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed">
                 "Get first access to our newest creations."
               </p>
               <form onSubmit={handleNewsletterSubmit} className="space-y-4">
@@ -159,7 +159,7 @@ const Footer = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                  className="w-full bg-emerald-300 text-gray-500 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
                 >
                   <span>Subscribe</span>
                   <ArrowRight className="w-4 h-4" />

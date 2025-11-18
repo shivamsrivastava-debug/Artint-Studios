@@ -91,7 +91,7 @@ const About = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="p-5 bg-gray-900/50 border border-gray-700 rounded-xl hover:border-gray-500 transition
+                className="p-5 bg-gray-900/50 border border-gray-700 rounded-xl hover:border-gray-500
                 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1
                 "
               >

@@ -15,7 +15,7 @@ const cardVariants = {
 
 const CTASection = () => {
   return (
-    <section className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-24 py-20 bg-black text-white-500">
+    <section className=" bg-gradient-to-r from-gray-800 via-black-500 to-black min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-24 py-20 text-white-500">
       {/* Left Side */}
       <div className="md:w-1/2 max-w-lg flex flex-col gap-20 p-8">
         {/* Header Card */}
@@ -24,27 +24,27 @@ const CTASection = () => {
           initial="hidden"
           animate="visible"
           variants={cardVariants}
-          className="bg-black rounded-2xl shadow-lg border border-gray-500 p-8"
+          className="bg-black rounded-2xl shadow-lg border border-gray-500 p-8 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
         >
           <p className="text-purple-600 font-semibold uppercase tracking-widest mb-3 text-sm">
             Contact us
           </p>
-          <p className="text-xl font-normal leading-snug mb-5 text-amber-50">
+          <p className="text-xl font-normal leading-snug mb-5 text-gray-500">
             We are always ready to help you and <br /> answer your questions
           </p>
         </motion.div>
 
         {/* Contact Cards Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-6">
           {/* Call Center */}
           <motion.div
             custom={1}
             initial="hidden"
             animate="visible"
             variants={cardVariants}
-            className="bg-black rounded-2xl shadow-md border border-gray-500 p-6">
+            className="bg-black rounded-2xl shadow-md border border-gray-500 p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
             <h3 className="text-purple-700 font-semibold text-lg mb-3">Call</h3>
-            <p className="text-gray-100">Contact : </p>
+            <p className="text-gray-500">Contact : </p>
           </motion.div>
 
           {/* Email */}
@@ -53,9 +53,9 @@ const CTASection = () => {
             initial="hidden"
             animate="visible"
             variants={cardVariants}
-            className="bg-black rounded-2xl shadow-md border border-gray-500 p-6">
+            className="bg-black rounded-2xl shadow-md border border-gray-500 p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
             <h3 className="text-purple-700 font-semibold text-lg mb-3">Email</h3>
-            <p className="text-gray-100">Email : </p>
+            <p className="text-gray-500">Email : </p>
           </motion.div>
 
           {/* Location */}
@@ -65,8 +65,8 @@ const CTASection = () => {
             animate="visible"
             variants={cardVariants}
             className="bg-black rounded-2xl shadow-md border border-gray-500 p-6">
-            <h3 className="text-purple-700 font-semibold text-lg mb-3">Location</h3>
-            <p className="text-gray-100 font-semibold">Location : </p>
+            <h3 className="text-purple-700 font-semibold text-lg mb-3 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">Location</h3>
+            <p className="text-gray-500 font-semibold">Location : </p>
           </motion.div>
           
           {/* Social Network */}
@@ -75,11 +75,11 @@ const CTASection = () => {
             initial="hidden"
             animate="visible"
             variants={cardVariants}
-            className="bg-black rounded-2xl shadow-md border border-gray-500 p-6 flex flex-col"
+            className="bg-black rounded-2xl shadow-md border border-gray-500 p-6 flex flex-col hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
           >
             <h3 className="text-purple-700 font-semibold text-lg mb-5">Social Media</h3>
             <div className="flex space-x-6 text-gray-600">
-</div>
+          </div>
           </motion.div>
         </div>
       </div>
@@ -89,39 +89,40 @@ const CTASection = () => {
         initial={{ opacity: 0, x: 60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="md:w-1/2 max-w-md bg-black rounded-3xl p-10 shadow-xl border border-gray-500"
+        className=" h-[540px] md:w-1/2 max-w-md bg-black rounded-3xl p-10 shadow-xl border border-gray-500"
       >
-        <h3 className="text-3xl font-semibold mb-8 text-gray-100">Get in Touch</h3>
+        <h3 className="text-3xl font-semibold mb-8 text-purple-500">Get in Touch</h3>
         <form className="flex flex-col space-y-6">
           <input
             type="text"
             placeholder="Full name"
-            className="px-5 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="placeholder-gray-500 px-5 py-3 rounded-lg border border-gray-500 focus:outline-none focus:ring-2 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
           />
           <input
             type="email"
             placeholder="Email"
-            className="px-5 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className=" placeholder-gray-500 px-5 py-3 rounded-lg border border-gray-500 focus:outline-none focus:ring-2 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
           />
           <input
             type="text"
             placeholder="Subject"
-            className="px-5 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className=" placeholder-gray-500 px-5 py-3 rounded-lg border border-gray-500 focus:outline-none focus:ring-2 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
           />
           <textarea
             rows={4}
             placeholder="Message"
-            className="px-5 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+            className=" placeholder-gray-500 px-5 py-3 rounded-lg border border-gray-500 focus:outline-none focus:ring-2 resize-none hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
           />
           <button
             type="submit"
-            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-2xl font-semibold hover:from-purple-700 hover:to-pink-700 transition duration-300"
+            className="bg-gradient-to-r from-purple-600 to-pink-600 text-gray-400 py-4 rounded-2xl font-semibold hover:from-purple-700 hover:to-pink-700 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
           >
             Send a message
           </button>
         </form>
       </motion.div>
     </section>
+    
   );
 };
 

@@ -93,26 +93,25 @@ const TheFuture = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-300 border border-gray-700 mb-6">
+          <div className="inline-flex items-center px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-emerald-300 border border-emerald-500 mb-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
             <Calendar className="w-4 h-4 mr-2" />
             Coming Soon
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-            The Future
-          </h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-purple-500 via-red-500 to-yellow-500 bg-clip-text text-transparent inline-block">
+                The Future
+              </span>
+            </h2>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto font-light">
-            Planting the seeds for your Film & Series Production.
-          </p>
-          <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Projects in development.
+          <p className="text-xl md:text-2xl mb-4 max-w-3xl mx-auto font-light bg-gradient-to-r from-purple-500 via-red-500 to-yellow-500 bg-clip-text text-transparent ">
+            span Planting the seeds for your Film & Series Production.
           </p>
         </div>
 
         {/* Projects in Development */}
         <div className="mb-20">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-200">
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-500">
             Projects in Development
           </h3>
           
@@ -120,7 +119,7 @@ const TheFuture = () => {
             {projectsInDevelopment.map((project, index) => (
               <motion.div
                 key={index}
-                className="group relative bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 hover:border-gray-600 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10"
+                className="group relative bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 hover:border-emerald-600 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
@@ -133,23 +132,23 @@ const TheFuture = () => {
                       <project.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-white mb-1">{project.title}</h4>
+                      <h4 className="text-xl font-bold text-emerald-500 mb-1">{project.title}</h4>
                       <p className="text-purple-400 text-sm font-medium">{project.type}</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 mb-2">
+                    <div className="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-500 mb-2">
                       {project.status}
                     </div>
                     <div className="text-sm text-gray-400">{project.timeline}</div>
                   </div>
                 </div>
                 
-                <p className="text-gray-300 leading-relaxed">{project.description}</p>
+                <p className="text-gray-500 leading-relaxed">{project.description}</p>
                 
                 <div className="mt-6 pt-6 border-t border-gray-800">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-400">Partnership Opportunities Available</span>
+                    <span className="text-sm text-yellow-700">Partnership Opportunities Available</span>
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   </div>
                 </div>
@@ -168,22 +167,22 @@ const TheFuture = () => {
           variants={cardVariants}
         >
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
               Start Early Partnerships
             </h3>
-            <p className="text-xl text-gray-300 mb-2">
+            <p className="text-xl mb-2 bg-gradient-to-r from-purple-500 to-red-500 bg-clip-text text-transparent">
               Invite film studios to collaborate on groundbreaking projects.
             </p>
-            <p className="text-gray-400">
+            <p className="text-gray-500">
               Get involved in the creative process from day one and shape the future of audio-visual storytelling.
             </p>
           </div>
 
-          <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-gray-800">
+          <div className="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-gray-800 hover:border-emerald-600 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 ">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-emerald-500 mb-2">
                     <Building className="w-4 h-4 inline mr-2" />
                     Studio Name *
                   </label>
@@ -192,14 +191,14 @@ const TheFuture = () => {
                     name="studioName"
                     value={formData.studioName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
+                    className="w-full px-4 py-3 bg-gray-800/50 border border-emerald-500 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                     placeholder="Your studio name"
                     required
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-sm font-medium mb-2 text-emerald-500">
                     <Users className="w-4 h-4 inline mr-2" />
                     Contact Name *
                   </label>
@@ -208,7 +207,7 @@ const TheFuture = () => {
                     name="contactName"
                     value={formData.contactName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
+                    className="w-full px-4 py-3 bg-gray-800/50 border border-emerald-700 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                     placeholder="Your full name"
                     required
                   />
@@ -217,7 +216,7 @@ const TheFuture = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-sm font-medium mb-2 text-emerald-500">
                     <Mail className="w-4 h-4 inline mr-2" />
                     Email Address *
                   </label>
@@ -226,14 +225,14 @@ const TheFuture = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
+                    className="w-full px-4 py-3 bg-gray-800/50 border border-emerald-500 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                     placeholder="your@email.com"
                     required
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="text-sm font-medium text-emerald-500 mb-2">
                     <Phone className="w-4 h-4 inline mr-2" />
                     Phone Number
                   </label>
@@ -242,14 +241,14 @@ const TheFuture = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
+                    className="w-full px-4 py-3 bg-gray-800/50 border border-emerald-500 rounded-xl placeholder-gray-500 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                     placeholder="+1 (555) 123-4567"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-emerald-500 mb-2">
                   <Film className="w-4 h-4 inline mr-2" />
                   Project Type of Interest
                 </label>
@@ -257,7 +256,7 @@ const TheFuture = () => {
                   name="projectType"
                   value={formData.projectType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-emerald-500 rounded-xl text-gray-500"
                 >
                   <option value="">Select a project type</option>
                   <option value="series">TV Series</option>
@@ -269,7 +268,7 @@ const TheFuture = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-sm font-medium mb-2 text-emerald-500">
                   Message *
                 </label>
                 <textarea
@@ -277,7 +276,7 @@ const TheFuture = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-emerald-500 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors resize-none"
                   placeholder="Tell us about your studio, your vision, and how you'd like to collaborate on our upcoming projects..."
                   required
                 ></textarea>
@@ -298,7 +297,7 @@ const TheFuture = () => {
 
         {/* Bottom Note */}
         <div className="text-center mt-16">
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-500 text-sm">
             We typically respond to partnership inquiries within 48 hours. 
             For urgent matters, please include "URGENT" in your message subject.
           </p>
